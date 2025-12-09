@@ -1,5 +1,5 @@
-let passwordLength = 15
-let passwordOutput = ""
+let passwordLength = 15 * 2
+let generateButton = document.getElementById("generate-button")
 let optionOne = document.getElementById("option-one")
 let optionTwo = document.getElementById("option-two")
 
@@ -29,7 +29,7 @@ if (capLettersElected === true && digitsElected === true && symbolsElected === t
 /* console.log(passwordCharacters) */
 
 // Output a psuedorandom passwords strings
-function generatePasswords() {
+function passwordsOutput() {
     let result = ""
     for (let i = 0; i < passwordLength; i++) {
         const randomIndex = Math.floor(Math.random() * passwordCharacters.length);
@@ -38,8 +38,28 @@ function generatePasswords() {
     return result
 }
 
-optionOneOut = generatePasswords()
-optionTwoOut = generatePasswords()
-
-optionOne.textContent = optionOneOut
-optionTwo.textContent = optionTwoOut
+// Initialize event listener for generate button
+generateButton.addEventListener("click", function() {
+    let optionOneOut = passwordsOutput();
+    let optionTwoOut = passwordsOutput();
+    var i = 0;
+    var speed = 50;
+/*     optionOne.textContent = optionOneOut; */
+/*     optionTwo.textContent = optionTwoOut; */
+    
+    // Animate the generated password outputs
+    function typingOutput() {
+        if (i < optionOneOut.length) {
+        optionOne.textContent += optionOneOut.charAt(i);
+        i++;
+        setTimeout(typingOutput, speed);
+      }
+      if (i < optionTwoOut.length) {
+        optionTwo.textContent += optionTwoOut.charAt(i);
+        i++;
+      }
+    } typingOutput()
+    // Reset element outputs
+    optionOne.textContent = "";
+    optionTwo.textContent = "";
+});

@@ -40,7 +40,6 @@ hr {
     width: 446px;
     height: 2px;
     border: none;
-    
     background: #2F3E53;
 }
 
@@ -54,8 +53,9 @@ h3 {
     text-align: center;
     vertical-align: middle;
     width: 211px;
-    height: 39px;
+    height: 29px;
     background-color: #273549;
     border-radius: 6px;
     color: #55F991;
+    padding-top: 8px;
 }

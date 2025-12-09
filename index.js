@@ -1,6 +1,5 @@
 let passwordLength = 15
-let result = ""
-
+let passwordOutput = ""
 let optionOne = document.getElementById("option-one")
 let optionTwo = document.getElementById("option-two")
 
@@ -30,13 +29,17 @@ if (capLettersElected === true && digitsElected === true && symbolsElected === t
 /* console.log(passwordCharacters) */
 
 // Output a psuedorandom passwords strings
-function generatePasswords () {
+function generatePasswords() {
+    let result = ""
     for (let i = 0; i < passwordLength; i++) {
         const randomIndex = Math.floor(Math.random() * passwordCharacters.length);
         result += passwordCharacters[randomIndex];
     }
     return result
 }
-generatePasswords()
 
-console.log(result)
+optionOneOut = generatePasswords()
+optionTwoOut = generatePasswords()
+
+optionOne.textContent = optionOneOut
+optionTwo.textContent = optionTwoOut

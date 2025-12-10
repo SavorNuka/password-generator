@@ -1,4 +1,4 @@
-let passwordLength = 15 * 2
+let passwordLength = 16 * 2
 let generateButton = document.getElementById("generate-button")
 let optionOne = document.getElementById("option-one")
 let optionTwo = document.getElementById("option-two")
@@ -18,13 +18,22 @@ let symbolChars = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","
 // Conditional logic for passwordCharacters
 if (capLettersElected === true && digitsElected === true && symbolsElected === true) {
     passwordCharacters = passwordCharacters.concat(lowerLetters, upperLetters, digitChars, symbolChars)
+} else if (capLettersElected === true && digitsElected === false && symbolsElected === true) {
+    passwordCharacters = passwordCharacters.concat(lowerLetters, upperLetters, symbolChars)
+} else if (capLettersElected === true && digitsElected === true && symbolsElected === false) {
+    passwordCharacters = passwordCharacters.concat(lowerLetters, upperLetters, digitChars)
 } else if (capLettersElected === false && digitsElected === true && symbolsElected === true) {
     passwordCharacters = passwordCharacters.concat(lowerLetters, digitChars, symbolChars)
+} else if (capLettersElected === true && digitsElected === false && symbolsElected === false) {
+    passwordCharacters = passwordCharacters.concat(lowerLetters, upperLetters)
+} else if (capLettersElected === false && digitsElected === true && symbolsElected === false) {
+    passwordCharacters = passwordCharacters.concat(lowerLetters, digitChars)
 } else if (capLettersElected === false && digitsElected === false && symbolsElected === true) {
     passwordCharacters = passwordCharacters.concat(lowerLetters, symbolChars)
 } else if (capLettersElected === false && digitsElected === false && symbolsElected === false) {
     passwordCharacters = passwordCharacters.concat(lowerLetters)
 }
+// Add remaining possible permutations
 
 /* console.log(passwordCharacters) */
 

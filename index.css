@@ -1,7 +1,7 @@
 body {
     margin: 100px;
-    background-color: #1F2937;
-    color: white;
+    background-color: #04151F;
+    color: #BDEDE0;
     font-family: "Karla", sans-serif;
 }
 
@@ -14,7 +14,7 @@ h1 {
 }
 
 #highlightText {
-    color: #4ADF86;
+    color: #F4C095;
 }
 
 p {
@@ -22,14 +22,16 @@ p {
     font-weight: 1;
     font-size: 22px;
     margin-bottom: 60px;
+    color: 823038;
 }
 
 button {
     width: 191px;
     height: 42px;
     font-size: medium;
-    color: white;
-    background-color: #10B981;
+    font-weight:bold;
+    color: #04151F;
+    background-color: #F4C095;
     border: none;
     border-radius: 6px;
     margin-bottom: 50px;
@@ -40,7 +42,7 @@ hr {
     width: 446px;
     height: 2px;
     border: none;
-    background: #2F3E53;
+    background: #598392;
 }
 
 .output-container {
@@ -54,8 +56,8 @@ h3 {
     vertical-align: middle;
     width: 211px;
     height: 29px;
-    background-color: #273549;
+    background-color: #598392;
     border-radius: 6px;
-    color: #55F991;
+    color: #04151F;
     padding-top: 8px;
 }

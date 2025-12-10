@@ -2,6 +2,7 @@ let passwordLength = 16 * 2
 let generateButton = document.getElementById("generate-button")
 let optionOne = document.getElementById("option-one")
 let optionTwo = document.getElementById("option-two")
+let messageOfTheDay = document.getElementById("message-of-the-day")
 
 // Password option bool elections
 let capLettersElected = true
@@ -72,3 +73,24 @@ generateButton.addEventListener("click", function() {
     optionOne.textContent = "";
     optionTwo.textContent = "";
 });
+
+function quippyStart() {
+    let greetingQuips = [
+        "If your password is 'password123,' you're not fooling anyone. Not even a highly confused house cat trying to log in.", // Comedy gold
+        "Your password should be like a good secret agent: untraceable, unforgettable (to you), and never written on a napkin.", 
+        "A password manager is like a digital vault, and your brain is currently using a shoebox under the bed. Time to upgrade!",
+        "If you use the same password for everything, when one site gets hacked, it's not a breach—it's a going-out-of-business sale for your identity.",
+        "Choosing your pet's name as your password means you're just asking for a cyber-catastrophe. Good job, Mittens1!",
+        "The minimum password requirement these days is: one uppercase, one lowercase, one number, one symbol, and a blood sample from a unicorn.",
+        "Change your password regularly... Your old one is getting lonely and is thinking about running away with a hacker.",
+        "Two-factor authentication (2FA) is like giving your bank account a bouncer. Sure, it's annoying, but nobody gets in without permission.",
+        "If a website says your password is 'too common,' it's judging you. It knows you're using your favorite pizza topping.",
+        "Don't recycle passwords. They don't magically become stronger the second time around; they just become tired, predictable targets.",
+        "Treat passwords like underwear... change it often and don't share it with strangers."
+    ]
+    let randomGreeting = greetingQuips[Math.floor(Math.random() * greetingQuips.length)];
+    messageOfTheDay.textContent = randomGreeting;
+    }
+
+console.log(messageOfTheDay)
+window.onbeforeunload = quippyStart();

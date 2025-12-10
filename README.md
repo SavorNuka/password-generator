@@ -30,9 +30,10 @@ Upcoming Features (subject to further changes):
 
 Contact:
 
-Angel Diaz | [GitHub]([url](https://github.com/SavorNuka/business-card)) | [LinkedIn]([url](https://www.linkedin.com/in/angel-l-diaz/)) | [Email](mailto:angel.l.diaz60@gmail.com)
+Angel Diaz | [GitHub](https://github.com/SavorNuka/business-card) | [LinkedIn](https://www.linkedin.com/in/angel-l-diaz/) | [Email](mailto:angel.l.diaz60@gmail.com)
 
 Acknowledgments:
 
-• [Scrimba's Fullstack Developer Path]([url](https://scrimba.com/fullstack-path-c0fullstack))
-• [W3Schools Typing Effect]([url](https://www.w3schools.com/howto/howto_js_typewriter.asp))
+• [Scrimba's Fullstack Developer Path](https://scrimba.com/fullstack-path-c0fullstack)
+• [W3Schools Typing Effect](https://www.w3schools.com/howto/howto_js_typewriter.asp)
+• [Stack Overflow](https://stackoverflow.com/questions/3950029/handle-refresh-page-event-with-javascript)

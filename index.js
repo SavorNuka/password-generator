@@ -1,3 +1,4 @@
+console.log(window.isSecureContext);
 let passwordLength = 15
 let generateButton = document.getElementById("generate-button")
 let optionOne = document.getElementById("option-one")
@@ -76,6 +77,32 @@ generateButton.addEventListener("click", function() {
     typingOutput();
 });
 
+async function copyOptionOne() {
+    const copyPass1 = document.getElementById("option-one");
+    const text1 = copyPass1.textContent;
+
+    try {
+        await navigator.clipboard.writeText(text1);
+        alert("Password: '" + text1 + "' is ready to paste!");
+    } catch (err) {
+        console.error("Copy failed:", err);
+        alert("Copy failed. See console.");
+    }
+}
+
+async function copyOptionTwo() {
+    const copyPass2 = document.getElementById("option-two");
+    const text2 = copyPass2.textContent;
+
+    try {
+        await navigator.clipboard.writeText(text2);
+        alert("Password: '" + text2 + "' is ready to paste!");
+    } catch (err) {
+        console.error("Copy failed:", err);
+        alert("Copy failed. See console.");
+    }
+}
+
 function quippyStart() {
     let greetingQuips = [
         "If your password is 'password123,' you're not fooling anyone. Not even a highly confused house cat trying to log in.", // Comedy gold
@@ -96,3 +123,4 @@ function quippyStart() {
 
 console.log(messageOfTheDay)
 window.onbeforeunload = quippyStart(), electedCheck()
+

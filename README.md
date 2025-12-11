@@ -37,3 +37,4 @@ Acknowledgments:
 • [Scrimba's Fullstack Developer Path](https://scrimba.com/fullstack-path-c0fullstack)
 • [W3Schools Typing Effect](https://www.w3schools.com/howto/howto_js_typewriter.asp)
 • [Stack Overflow](https://stackoverflow.com/questions/3950029/handle-refresh-page-event-with-javascript)
+• [W3Schools Custom Checkbox](https://www.w3schools.com/howto/howto_css_custom_checkbox.asp)

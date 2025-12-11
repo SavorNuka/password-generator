@@ -25,6 +25,32 @@ p {
     width: 460px;
 }
 
+.copy-button {
+    width: 30px;
+    height: 30px;
+    margin-top: 28px;
+    background-image: url("Copy-Paste--Streamline-Core.svg");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-color: #BDEDE0;
+    background-position: center left 4px;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-button:hover {
+    width: 30px;
+    height: 30px;
+    margin-top: 28px;
+    background-image: url("Copy-Paste--Streamline-Core.svg");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-color: #F4C095;
+    background-position: center left 2px;
+    align-items: center;
+    justify-content: center;
+}
+
 button {
     width: 191px;
     height: 42px;
@@ -39,7 +65,7 @@ button {
 
 hr {
     margin: 0px;
-    width: 446px;
+    width: 480px;
     height: 2px;
     border: none;
     background: #598392;

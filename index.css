@@ -22,7 +22,7 @@ p {
     font-weight: 1;
     font-size: 22px;
     margin-bottom: 60px;
-    color: 823038;
+    width: 460px;
 }
 
 button {
@@ -34,7 +34,7 @@ button {
     background-color: #F4C095;
     border: none;
     border-radius: 6px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 hr {
@@ -46,7 +46,7 @@ hr {
 }
 
 .output-container {
-    margin-top: 45px;
+    margin-top: 5px;
     gap: 25px;
     display: flex;
 }
@@ -60,6 +60,8 @@ h3 {
     border-radius: 6px;
     color: #04151F;
     padding-top: 8px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 /* Password configuration section */
@@ -69,12 +71,13 @@ h3 {
     padding-left: 35px;
     margin-bottom: 12px;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 19px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     color: #BDEDE0;
+    max-width: 350px;
 }
 
 /* Hide default checkbox */
@@ -103,12 +106,20 @@ h3 {
 }
 
 /* Checkmark mouse over visual */
-.checkmark:hover input ~ .checkmark:after {
+.config-container:hover input ~ .checkmark:after {
     border: solid #04151F;
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 /* Checkbox visual - checked */
-.config-container:checked ~ .checkmark {
+.config-container:checked ~ .checkmark:after {
     background-color: #BDEDE0;
 }
 

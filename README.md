@@ -39,3 +39,7 @@ Acknowledgments:
 • [Stack Overflow](https://stackoverflow.com/questions/3950029/handle-refresh-page-event-with-javascript)
 • [W3Schools Custom Checkbox](https://www.w3schools.com/howto/howto_css_custom_checkbox.asp)
 • [MDN Checkbox Input Type](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/checkbox)
+
+Attributions:
+
+• [Copy/Paste Icon](https://www.streamlinehq.com/icons/core-line-free/interface-essential?icon=ico_NWwF32N6ybfV4D9V)

@@ -21,7 +21,7 @@ p {
     font-family: "Karla", sans-serif;
     font-weight: 1;
     font-size: 22px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     width: 460px;
 }
 
@@ -65,7 +65,7 @@ button {
 
 hr {
     margin: 0px;
-    width: 480px;
+    width: 560px;
     height: 2px;
     border: none;
     background: #598392;
@@ -172,4 +172,172 @@ h3 {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+#password-length-label {
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Karla", sans-serif;
+    font-size: 19px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 200px;
+}
+
+.range {
+    margin-top: 50px;
+    height: 100vh;
+    display: grid;
+    width: 50vw;
+    max-width: 560px;
+}
+
+.range {
+  --primaryColor: #F4C095;
+  --value-active-color: black;
+  --value-background: var(--primaryColor);
+  --value-font: 700 12px/1 "Karla", sans-serif;
+  --progress-color: #598392;
+  --progress-shadow: 2px 2px 4px rgba(0,0,0, .1) inset;
+  --fill-color: var(--primaryColor);
+  --thumb-size: 16px;
+  --track-height: calc(var(--thumb-size)/2);
+  --thumb-shadow: 0 0 3px rgba(0,0,0,.2);
+  --ticks-thickness: 1px;
+  --ticks-height: 5px;
+  --ticks-color: #F4C095;
+  --step: 1;
+  --ticks-count: (var(--max) - var(--min)) / var(--step);
+  --maxTicksAllowed: 64;
+  --too-many-ticks: Min(1, Max(var(--ticks-count) - var(--maxTicksAllowed), 0));
+  --x-step: Max( var(--step), var(--too-many-ticks) * (var(--max) - var(--min)) );
+  --tickInterval: 100/((var(--max) - var(--min)) / var(--step)) * var(--tickEvery, 1);
+  --tickIntervalPerc: calc((100% - var(--thumb-size))/( (var(--max) - var(--min)) / var(--x-step) ) * var(--tickEvery, 1));
+  --completed: calc((var(--value) - var(--min) ) / (var(--max) - var(--min)) * 100);
+  display: inline-block;
+  height: var(--thumb-size);
+  margin-top: 30px;
+  background: linear-gradient(to right, var(--ticks-color) var(--ticks-thickness), transparent 1px) repeat-x;
+  background-size: var(--tickIntervalPerc) var(--ticks-height);
+  background-position: calc(var(--thumb-size)/2) bottom;
+  padding-bottom: var(--ticks-height);
+  position: relative;
+}
+.range::before, .range::after {
+  font: 12px Arial;
+  content: counter(x);
+  position: absolute;
+  bottom: -2.5ch;
+}
+.range::before {
+  counter-reset: x var(--min);
+  left: 0;
+}
+.range::after {
+  counter-reset: x var(--max);
+  right: 0;
+}
+.range__progress {
+  position: absolute;
+  left: 0;
+  top: calc(50% - var(--ticks-height)/2);
+  transform: translateY(-50%);
+  width: 100%;
+  height: calc(var(--track-height));
+  pointer-events: none;
+  z-index: -1;
+  box-shadow: var(--progress-shadow);
+  border-radius: 20px;
+  background: var(--fill-color, white);
+}
+.range__progress::before {
+  content: "";
+  display: block;
+  margin-left: auto;
+  margin-right: -0.5px;
+  width: calc(100% - var(--completed) * 1%);
+  height: 100%;
+  background: var(--progress-color, #EEE);
+  box-shadow: inherit;
+  border-radius: 0 20px 20px 0;
+}
+.range > input {
+  -webkit-appearance: none;
+            appearance: none;
+  width: 100%;
+  height: var(--thumb-size);
+  margin: 0;
+  cursor: -webkit-grab;
+  cursor: grab;
+  outline: none;
+  background: none;
+}
+.range > input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  height: var(--thumb-size);
+  width: var(--thumb-size);
+  border-radius: 50%;
+  background: var(--thumb-color, white);
+  border: 1px solid silver;
+  box-shadow: var(--inner-shadow, 0 0), var(--thumb-shadow);
+}
+.range > input::-moz-slider-thumb {
+  -moz-appearance: none;
+       appearance: none;
+  height: var(--thumb-size);
+  width: var(--thumb-size);
+  border-radius: 50%;
+  background: var(--thumb-color, white);
+  border: 1px solid silver;
+  box-shadow: var(--inner-shadow, 0 0), var(--thumb-shadow);
+}
+.range > input::-ms-thumb {
+  appearance: none;
+  height: var(--thumb-size);
+  width: var(--thumb-size);
+  border-radius: 50%;
+  background: var(--thumb-color, white);
+  border: 1px solid silver;
+  box-shadow: var(--inner-shadow, 0 0), var(--thumb-shadow);
+}
+.range > input:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+  --thumb-color: var(--fill-color);
+  --inner-shadow: 0 0 0 calc(var(--thumb-size)/4) inset white;
+}
+.range > input:active + output {
+  transition: 0s;
+}
+.range > input:hover + output {
+  background: var(--value-background);
+  color: var(--value-active-color);
+  transform: translate(var(--x-offset), 0);
+  box-shadow: 0 0 0 3px var(--value-background);
+}
+.range > output {
+  --x-offset: calc(var(--completed) * -1%);
+  pointer-events: none;
+  position: absolute;
+  background: transparent;
+  border-radius: 10px;
+  padding: 0 4px;
+  top: -3ch;
+  left: calc(((var(--value) - var(--min))/(var(--max) - var(--min))) * 100%);
+  transform: translate(var(--x-offset), 6px);
+  transition: all 0.12s ease-out, left 0s, top 0s;
+}
+.range > output::after {
+  content: var(--text-value);
+  font: var(--value-font);
+}
+
+#password-input:hover{
+    background-color: #F4C095;
+    color: #04151F;
+}
+
+.pass-length-config-container {
+    margin-top: 20px;
 }

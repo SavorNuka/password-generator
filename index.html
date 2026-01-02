@@ -32,7 +32,30 @@
                 <input type="checkbox" id="config-spc" onclick="electedCheck()">
                 <span class="checkmark"></span>
             </label>
-
+        </div>
+        <br>
+        <hr>
+        <div class="pass-length-config-container">
+            <label for="password-length" id="password-length-label">Set Password Length (8-64 characters)</label>
+            <br>
+        <div
+                class="range range--ticks"
+                style='--step:1; --min:8; --max:64; --value:12; --text-value:"12"; --tickEvery:1; --fill-color:linear-gradient(to right, #BDEDE0, #F4C095);'
+            >
+            <input
+                type="range"
+                id="password-input"
+                min="8"
+                max="64"
+                value="12"
+                oninput="this.parentNode.style.setProperty('--value',this.value); this.parentNode.style.setProperty('--text-value', JSON.stringify(this.value))"
+            >
+            <output>
+                <!-- Output to change password length in function -->
+            </output>
+            <div class='range__progress'>
+            </div>
+        </div>
         </div>
         <script src="index.js"></script>
         </body>

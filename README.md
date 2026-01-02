@@ -1,3 +1,4 @@
+```
  _______  _______  _______  _______           _______  _______  ______     _______  _______  _        _______  _______  _______ _________ _______  _______ 
 (  ____ )(  ___  )(  ____ \(  ____ \|\     /|(  ___  )(  ____ )(  __  \   (  ____ \(  ____ \( (    /|(  ____ \(  ____ )(  ___  )\__   __/(  ___  )(  ____ )
 | (    )|| (   ) || (    \/| (    \/| )   ( || (   ) || (    )|| (  \  )  | (    \/| (    \/|  \  ( || (    \/| (    )|| (   ) |   ) (   | (   ) || (    )|
@@ -11,6 +12,7 @@
 ┏┓        ┳┓  ┓   
 ┗┓┏┓┓┏┏┓┏┓┃┃┓┏┃┏┏┓
 ┗┛┗┻┗┛┗┛┛ ┛┗┗┻┛┗┗┻
+```
 
 Built With:
 • Netlify (deployment)
@@ -21,8 +23,10 @@ This is an open-source password generator that produces secure and configurable 
 
 Upcoming Features (subject to further changes):
 
-• Password configuration GUI
-• Copy password button
+• ~~Password configuration GUI~~
+• ~~Copy password button~~
+• ~~Configure Password Length~~
+• Passphrase password output
 • Password strength indicator
 • Chromium-based browser extension
 • Password storage (local access)

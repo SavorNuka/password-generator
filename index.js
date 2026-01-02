@@ -1,5 +1,7 @@
 console.log(window.isSecureContext);
-let passwordLength = 15
+let passwordLength = 12;
+
+// Get DOM elements
 let generateButton = document.getElementById("generate-button")
 let optionOne = document.getElementById("option-one")
 let optionTwo = document.getElementById("option-two")
@@ -27,7 +29,7 @@ function rebuildPasswordCharacters() {
     if (symbolsElected) passwordCharacters.push(...symbolChars);
 }
 
-/* Set the checked state of elections */
+// Set the checked state of elections
 function electedCheck() {
 
     capLettersElected = document.getElementById("config-cap").checked;
@@ -37,14 +39,23 @@ function electedCheck() {
     rebuildPasswordCharacters();
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    const passwordInput = document.getElementById("password-input");
+    passwordLength = passwordInput.valueAsNumber || 12;
+
+    passwordInput.addEventListener("input", function() {
+        passwordLength = this.valueAsNumber || 12;
+    });
+});
+
 // Output a psuedorandom passwords strings
 function passwordsOutput() {
-    let result = ""
+    let result = "";
     for (let i = 0; i < passwordLength; i++) {
         const randomIndex = Math.floor(Math.random() * passwordCharacters.length);
         result += passwordCharacters[randomIndex];
     }
-    return result
+    return result;
 }
 
 // Initialize event listener for generate button
@@ -105,12 +116,12 @@ async function copyOptionTwo() {
 
 function quippyStart() {
     let greetingQuips = [
-        "If your password is 'password123,' you're not fooling anyone. Not even a highly confused house cat trying to log in.", // Comedy gold
+        "If your password is 'password123,' you're not fooling anyone. Not even a highly confused house cat trying to log in. 😼", // Comedy gold
         "Your password should be like a good secret agent: untraceable, unforgettable (to you), and never written on a napkin.", 
-        "A password manager is like a digital vault, and your brain is currently using a shoebox under the bed. Time to upgrade!",
-        "If you use the same password for everything, when one site gets hacked, it's not a breach—it's a going-out-of-business sale for your identity.", // Slightly lame — should replace ahead of deployment
-        "Choosing your pet's name as your password means you're just asking for a cyber-catastrophe. Good job, Mittens1!",
-        "The minimum password requirement these days is: one uppercase, one lowercase, one number, one symbol, and a blood sample from a unicorn.",
+        "A password manager is like a digital vault, and your brain is currently using a shoebox under the bed.  Time to upgrade!",
+        "If you use the same password for everything, when one site gets hacked, it's not a breach— it's a going-out-of-business sale for your identity. 🤑", // Slightly lame — should replace ahead of deployment
+        "Choosing your pet's name as your password means you're just asking for a cyber-catastrophe. Good job, Mittens1! 😸",
+        "The minimum password requirement these days is: one uppercase, one lowercase, one number, one symbol, and a blood sample from a unicorn. 🦄",
         "Change your password regularly... Your old one is getting lonely and is thinking about running away with a hacker.",
         "Two-factor authentication (2FA) is like giving your bank account a bouncer. Sure, it's annoying, but nobody gets in without permission.",
         "If a website says your password is 'too common,' it's judging you. It knows you're using your favorite pizza topping.",
@@ -119,8 +130,11 @@ function quippyStart() {
     ]
     let randomGreeting = greetingQuips[Math.floor(Math.random() * greetingQuips.length)];
     messageOfTheDay.textContent = randomGreeting;
-}
+};
 
-console.log(messageOfTheDay)
-window.onbeforeunload = quippyStart(), electedCheck()
+console.log(messageOfTheDay);
 
+window.onload = function() {
+    quippyStart();
+    electedCheck();
+};

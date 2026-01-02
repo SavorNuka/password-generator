@@ -80,12 +80,13 @@ hr {
 h3 {
     text-align: center;
     vertical-align: middle;
-    width: 211px;
+    min-width: 209px;
+    max-width: fit-content;
     height: 29px;
     background-color: #598392;
     border-radius: 6px;
     color: #04151F;
-    padding-top: 8px;
+    padding: 8px 2px 0px;
     margin-top: 25px;
     margin-bottom: 25px;
 }
